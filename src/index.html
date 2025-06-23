@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I-Campus Assistant</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    #live2d {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #avatar-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      cursor: grab;
+    }
+
+    #speech-bubble {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: white;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 9999;
+      max-width: 300px;
+      text-align: left;
+      overflow: visible;
+    }
+
+    #speech-bubble::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      transform: translateY(-50%);
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent transparent white;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="live2d"></canvas>
+  <div id="avatar-wrapper"></div>
+  <div id="speech-bubble">Say "Hey Iris!" to begin...</div>
+  <script type="module" src="./renderer.js"></script>
+</body>
+</html>

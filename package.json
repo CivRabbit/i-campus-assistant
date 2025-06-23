@@ -1,0 +1,52 @@
+{
+  "name": "i-campus-assistant",
+  "version": "1.0.0",
+  "description": "I-Campus Digital Assistant",
+  "main": "main.js",
+  "author": "USP College",
+  "scripts": {
+    "dev": "vite",
+    "build-renderer": "vite build",
+    "build": "npm run build-renderer && electron-builder",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "com.uspcollege.icampus",
+    "productName": "I-Campus Assistant",
+    "mac": {
+      "entitlements": "entitlements.mac.plist",
+      "extendInfo": "Info.plist",
+      "category": "public.app-category.education",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "wakeword.js",
+      "resources/**/*"
+    ],
+    "extraResources": [],
+    "directories": {
+      "output": "release"
+    }
+  },
+  "dependencies": {
+    "@picovoice/porcupine-node": "^3.0.6",
+    "@pixi/loaders": "^6.5.10",
+    "dotenv": "^16.5.0",
+    "node-fetch": "^3.3.2",
+    "node-record-lpcm16": "^1.0.1",
+    "openai": "^4.97.0",
+    "pixi-live2d-display": "^0.4.0",
+    "pixi.js": "^7.4.3"
+  },
+  "devDependencies": {
+    "electron": "^36.1.0",
+    "electron-builder": "^24.13.3",
+    "vite": "^6.3.5"
+  }
+}
