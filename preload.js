@@ -5,5 +5,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
 });
 
 contextBridge.exposeInMainWorld('api', {
-  askGPT: (prompt) => ipcRenderer.invoke('ask-gpt', prompt)
+  askGPT: (prompt) => ipcRenderer.invoke('ask-gpt', prompt),
+  elevenLabsTTS: (text, voiceId) => ipcRenderer.invoke('eleven-labs-tts', { text, voiceId })
 });
