@@ -48,7 +48,7 @@ app.whenReady().then(() => {
   createWindow();
 
   startWakeWordListener(
-    'Aj6DgB/tKnm+wPaNiCqAPyIFLttolGkGadeTELiCiO6sR1R8kUTXZQ==', // Replace with your actual key
+    '', // Replace with your actual key
     './resources/Hey-Iris_en_mac_v3_0_0.ppn',
     () => {
       if (mainWindow) {
